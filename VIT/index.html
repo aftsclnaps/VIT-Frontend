@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Webcrumbs Plugin</title>
+        <style>
+            @import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
+            @import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
+        </style>
+    </head>
+    <body>
+        <div id="webcrumbs">
+            <div class="w-[1200px] bg-neutral-50 font-sans rounded-xl overflow-hidden shadow-lg">
+                <div class="bg-primary-800 text-white p-6">
+                    <div class="flex justify-between items-center">
+                        <h1 class="text-3xl font-bold">Autonomous Rescue Rover Control Panel</h1>
+                        <div class="flex items-center gap-4">
+                            <button
+                                class="bg-primary-700 hover:bg-primary-600 transition-colors px-4 py-2 rounded-lg flex items-center gap-2"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2h2a1 1 0 100-2H9z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                                Help
+                            </button>
+                            <button
+                                class="bg-red-600 hover:bg-red-500 transition-colors px-4 py-2 rounded-lg flex items-center gap-2"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                                Emergency Stop
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-6 p-6">
+                    <div class="col-span-2">
+                        <div class="bg-white rounded-lg shadow-md p-6 h-[400px] mb-6 relative overflow-hidden">
+                            <div class="text-xl font-bold mb-4">Microphone Sensor</div>
+                            <div class="bg-neutral-900 h-[320px] rounded-lg flex items-center justify-center">
+                                <div class="text-white text-center">
+                                    <span class="material-symbols-outlined text-6xl mb-2">mic_off</span>
+                                    <p>Audio feed unavailable</p>
+                                    <p class="text-neutral-400 text-sm mt-2">Waiting for connection with Rover-1</p>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 right-4 flex gap-3">
+                                <button
+                                    class="bg-neutral-200 hover:bg-neutral-300 transition-all p-2 rounded-full transform hover:scale-110"
+                                >
+                                    <span class="material-symbols-outlined">fullscreen</span>
+                                </button>
+                                <button
+                                    class="bg-neutral-200 hover:bg-neutral-300 transition-all p-2 rounded-full transform hover:scale-110"
+                                >
+                                    <span class="material-symbols-outlined">settings</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 mt-6">
+                            <h2 class="text-xl font-bold mb-4">Audio Analysis</h2>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div
+                                    class="p-4 bg-neutral-50 rounded-lg border border-neutral-100 hover:border-primary-200 transition-all"
+                                >
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm text-neutral-600">Noise Level</span>
+                                        <span class="text-sm font-semibold">Low</span>
+                                    </div>
+                                    <div class="w-full bg-neutral-200 rounded-full h-2.5">
+                                        <div class="bg-primary-500 h-2.5 rounded-full" style="width: 20%"></div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="p-4 bg-neutral-50 rounded-lg border border-neutral-100 hover:border-primary-200 transition-all"
+                                >
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm text-neutral-600">Frequency Range</span>
+                                        <span class="text-sm font-semibold">20-150 Hz</span>
+                                    </div>
+                                    <div class="flex gap-1 mt-2">
+                                        <div class="w-2 h-4 bg-primary-600 rounded-t"></div>
+                                        <div class="w-2 h-6 bg-primary-600 rounded-t"></div>
+                                        <div class="w-2 h-8 bg-primary-600 rounded-t"></div>
+                                        <div class="w-2 h-5 bg-primary-600 rounded-t"></div>
+                                        <div class="w-2 h-3 bg-primary-600 rounded-t"></div>
+                                        <div class="w-2 h-7 bg-primary-600 rounded-t"></div>
+                                        <div class="w-2 h-2 bg-primary-600 rounded-t"></div>
+                                        <div class="w-2 h-6 bg-primary-600 rounded-t"></div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="p-4 bg-neutral-50 rounded-lg border border-neutral-100 hover:border-primary-200 transition-all"
+                                >
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="material-symbols-outlined text-primary-600">equalizer</span>
+                                        <span class="text-sm font-semibold">Sound Detection</span>
+                                    </div>
+                                    <ul class="text-sm text-neutral-600 space-y-1 mt-2">
+                                        <li class="flex items-center gap-1">
+                                            <span class="h-2 w-2 rounded-full bg-green-500"></span> Human voice: Not
+                                            detected
+                                        </li>
+                                        <li class="flex items-center gap-1">
+                                            <span class="h-2 w-2 rounded-full bg-yellow-500"></span> Machinery: Possible
+                                            detection
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div
+                                    class="p-4 bg-neutral-50 rounded-lg border border-neutral-100 hover:border-primary-200 transition-all"
+                                >
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="material-symbols-outlined text-primary-600">settings_voice</span>
+                                        <span class="text-sm font-semibold">Sensitivity Settings</span>
+                                    </div>
+                                    <div class="mt-2">
+                                        <input
+                                            type="range"
+                                            class="w-full accent-primary-600"
+                                            min="0"
+                                            max="100"
+                                            value="75"
+                                        />
+                                        <div class="flex justify-between text-xs text-neutral-500">
+                                            <span>Low</span> <span>High</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <h2 class="text-xl font-bold mb-4">Rover Control</h2>
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="col-span-1 flex flex-col items-center gap-2">
+                                    <button
+                                        class="bg-primary-600 hover:bg-primary-500 disabled:bg-neutral-300 text-white w-16 h-16 rounded-full flex items-center justify-center transition-colors transform hover:scale-105"
+                                    >
+                                        <span class="material-symbols-outlined text-3xl">arrow_upward</span>
+                                    </button>
+                                    <div class="flex gap-2">
+                                        <button
+                                            class="bg-primary-600 hover:bg-primary-500 disabled:bg-neutral-300 text-white w-16 h-16 rounded-full flex items-center justify-center transition-colors transform hover:scale-105"
+                                        >
+                                            <span class="material-symbols-outlined text-3xl">arrow_back</span>
+                                        </button>
+                                        <button
+                                            class="bg-primary-600 hover:bg-primary-500 disabled:bg-neutral-300 text-white w-16 h-16 rounded-full flex items-center justify-center transition-colors transform hover:scale-105"
+                                        >
+                                            <span class="material-symbols-outlined text-3xl">arrow_forward</span>
+                                        </button>
+                                    </div>
+                                    <button
+                                        class="bg-primary-600 hover:bg-primary-500 disabled:bg-neutral-300 text-white w-16 h-16 rounded-full flex items-center justify-center transition-colors transform hover:scale-105"
+                                    >
+                                        <span class="material-symbols-outlined text-3xl">arrow_downward</span>
+                                    </button>
+                                </div>
+                                <div class="col-span-2 border-l pl-4">
+                                    <div class="mb-4">
+                                        <h3 class="font-semibold mb-2">Speed Control</h3>
+                                        <input
+                                            type="range"
+                                            class="w-full accent-primary-600"
+                                            min="0"
+                                            max="100"
+                                            value="50"
+                                        />
+                                        <div class="flex justify-between text-xs text-neutral-500">
+                                            <span>Slow</span> <span>Fast</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <button
+                                            class="bg-red-100 hover:bg-red-200 text-red-800 py-3 px-4 rounded-lg flex items-center gap-2 transition-colors"
+                                        >
+                                            <span class="material-symbols-outlined">pause_circle</span> Stop Rover
+                                        </button>
+                                        <button
+                                            class="bg-green-100 hover:bg-green-200 text-green-800 py-3 px-4 rounded-lg flex items-center gap-2 transition-colors"
+                                        >
+                                            <span class="material-symbols-outlined">auto_mode</span> Auto Mode
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 space-y-6">
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-xl font-bold">Session Status</h2>
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Active</span>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-neutral-600">Session ID:</span>
+                                    <code class="bg-neutral-100 px-2 py-1 rounded text-sm">123e4567-e89b-12d3-...</code>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-neutral-600">Connected Rover:</span>
+                                    <span class="font-semibold">Rover-1</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-neutral-600">Connection Status:</span>
+                                    <div class="flex items-center">
+                                        <span class="h-2 w-2 rounded-full bg-green-500 mr-2"></span>
+                                        <span>Connected</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button
+                                class="w-full mt-4 bg-neutral-100 hover:bg-neutral-200 py-2 rounded-lg transition-colors"
+                            >
+                                Start New Session
+                            </button>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <h2 class="text-xl font-bold mb-4">Rover Status</h2>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-sm text-neutral-600">Battery Level</span>
+                                        <span class="text-sm font-semibold">8%</span>
+                                    </div>
+                                    <div class="w-full bg-neutral-200 rounded-full h-2.5">
+                                        <div class="bg-red-500 h-2.5 rounded-full" style="width: 8%"></div>
+                                    </div>
+                                    <div class="mt-1 flex items-center text-xs text-red-600">
+                                        <span class="material-symbols-outlined text-sm mr-1">warning</span>
+                                        Communication lost - battery below 10%
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-sm text-neutral-600">Signal Strength</span>
+                                        <span class="text-sm font-semibold">Weak</span>
+                                    </div>
+                                    <div class="flex gap-1">
+                                        <div class="w-2 h-6 bg-yellow-500 rounded"></div>
+                                        <div class="w-2 h-6 bg-yellow-500 rounded"></div>
+                                        <div class="w-2 h-6 bg-neutral-200 rounded"></div>
+                                        <div class="w-2 h-6 bg-neutral-200 rounded"></div>
+                                        <div class="w-2 h-6 bg-neutral-200 rounded"></div>
+                                    </div>
+                                </div>
+                                <div class="border-t pt-3 grid grid-cols-2 gap-x-4 gap-y-3">
+                                    <div>
+                                        <span class="text-sm text-neutral-600 block">Status</span>
+                                        <span class="font-semibold block">Recharging</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-sm text-neutral-600 block">Temperature</span>
+                                        <span class="font-semibold block">32°C</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-sm text-neutral-600 block">Location</span>
+                                        <span class="font-semibold block">Zone B-12</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-sm text-neutral-600 block">Last Update</span>
+                                        <span class="font-semibold block">1m ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <h2 class="text-xl font-bold mb-4">Fleet Overview</h2>
+                            <div class="space-y-3">
+                                <div
+                                    class="flex items-center justify-between p-3 bg-neutral-50 rounded-lg border border-neutral-200"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="h-10 w-10 rounded-full bg-primary-200 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="material-symbols-outlined text-primary-800">smart_toy</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-semibold block">Rover-1</span>
+                                            <span class="text-xs text-neutral-500">Recharging</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <span class="bg-red-100 text-red-800 text-xs px-2 py-0.5 rounded"
+                                            >Low Battery</span
+                                        >
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-3 bg-neutral-50 rounded-lg border border-neutral-200"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="h-10 w-10 rounded-full bg-primary-200 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="material-symbols-outlined text-primary-800">smart_toy</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-semibold block">Rover-2</span>
+                                            <span class="text-xs text-neutral-500">On mission</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <span class="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded"
+                                            >Active</span
+                                        >
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-3 bg-neutral-50 rounded-lg border border-neutral-200"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="h-10 w-10 rounded-full bg-primary-200 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="material-symbols-outlined text-primary-800">smart_toy</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-semibold block">Rover-3</span>
+                                            <span class="text-xs text-neutral-500">Standby</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <span class="bg-neutral-100 text-neutral-800 text-xs px-2 py-0.5 rounded"
+                                            >Idle</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-neutral-100 p-4 border-t border-neutral-200">
+                    <div class="flex justify-between items-center">
+                        <div class="text-sm text-neutral-500">
+                            Last status update: <span class="font-semibold">12:45:32 PM</span>
+                        </div>
+                        <div class="text-sm flex items-center gap-4">
+                            <button
+                                class="text-primary-700 hover:text-primary-600 transition-colors flex items-center gap-1"
+                            >
+                                <span class="material-symbols-outlined text-sm">download</span> Export Data
+                            </button>
+                            <button
+                                class="text-primary-700 hover:text-primary-600 transition-colors flex items-center gap-1"
+                            >
+                                <span class="material-symbols-outlined text-sm">refresh</span> Refresh
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                content: ["./src/**/*.{html,js}"],
+                theme: {
+                    name: "Synthwave",
+                    fontFamily: {
+                        sans: [
+                            "Roboto",
+                            "ui-sans-serif",
+                            "system-ui",
+                            "sans-serif",
+                            '"Apple Color Emoji"',
+                            '"Segoe UI Emoji"',
+                            '"Segoe UI Symbol"',
+                            '"Noto Color Emoji"'
+                        ]
+                    },
+                    extend: {
+                        fontFamily: {
+                            title: [
+                                "Roboto",
+                                "ui-sans-serif",
+                                "system-ui",
+                                "sans-serif",
+                                '"Apple Color Emoji"',
+                                '"Segoe UI Emoji"',
+                                '"Segoe UI Symbol"',
+                                '"Noto Color Emoji"'
+                            ],
+                            body: [
+                                "Roboto",
+                                "ui-sans-serif",
+                                "system-ui",
+                                "sans-serif",
+                                '"Apple Color Emoji"',
+                                '"Segoe UI Emoji"',
+                                '"Segoe UI Symbol"',
+                                '"Noto Color Emoji"'
+                            ]
+                        },
+                        colors: {
+                            neutral: {
+                                50: "#19103E",
+                                100: "#18103C",
+                                200: "#180F3A",
+                                300: "#170F38",
+                                400: "#160E37",
+                                500: "#150E35",
+                                600: "#0A0619",
+                                700: "#080513",
+                                800: "#05030C",
+                                900: "#020206",
+                                DEFAULT: "#19103E"
+                            },
+                            primary: {
+                                50: "#FDF2F9",
+                                100: "#FBEBF6",
+                                200: "#F8D5EC",
+                                300: "#E779C1",
+                                400: "#D06DAE",
+                                500: "#B9619A",
+                                600: "#AD5B91",
+                                700: "#8B4974",
+                                800: "#683657",
+                                900: "#512A44",
+                                DEFAULT: "#E779C1"
+                            }
+                        }
+                    },
+                    fontSize: {
+                        xs: ["13.5px", {lineHeight: "21.6px"}],
+                        sm: ["15.75px", {lineHeight: "23.625px"}],
+                        base: ["18px", {lineHeight: "28.8px"}],
+                        lg: ["20.25px", {lineHeight: "30.375px"}],
+                        xl: ["22.5px", {lineHeight: "31.499999999999996px"}],
+                        "2xl": ["27px", {lineHeight: "35.1px"}],
+                        "3xl": ["33.75px", {lineHeight: "40.5px"}],
+                        "4xl": ["40.5px", {lineHeight: "46.574999999999996px"}],
+                        "5xl": ["54px", {lineHeight: "59.400000000000006px"}],
+                        "6xl": ["67.5px", {lineHeight: "74.25px"}],
+                        "7xl": ["81px", {lineHeight: "85.05px"}],
+                        "8xl": ["108px", {lineHeight: "113.4px"}],
+                        "9xl": ["144px", {lineHeight: "151.20000000000002px"}]
+                    },
+                    borderRadius: {
+                        none: "0px",
+                        sm: "4px",
+                        DEFAULT: "8px",
+                        md: "12px",
+                        lg: "16px",
+                        xl: "24px",
+                        "2xl": "32px",
+                        "3xl": "48px",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        0: "0px",
+                        1: "5px",
+                        2: "10px",
+                        3: "15px",
+                        4: "20px",
+                        5: "25px",
+                        6: "30px",
+                        7: "35px",
+                        8: "40px",
+                        9: "45px",
+                        10: "50px",
+                        11: "55px",
+                        12: "60px",
+                        14: "70px",
+                        16: "80px",
+                        20: "100px",
+                        24: "120px",
+                        28: "140px",
+                        32: "160px",
+                        36: "180px",
+                        40: "200px",
+                        44: "220px",
+                        48: "240px",
+                        52: "260px",
+                        56: "280px",
+                        60: "300px",
+                        64: "320px",
+                        72: "360px",
+                        80: "400px",
+                        96: "480px",
+                        px: "1px",
+                        0.5: "2.5px",
+                        1.5: "7.5px",
+                        2.5: "12.5px",
+                        3.5: "17.5px"
+                    }
+                },
+                plugins: [],
+                important: "#webcrumbs"
+            }
+        </script>
+    </body>
+</html>
